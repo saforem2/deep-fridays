@@ -5744,15 +5744,11 @@ As $N\rightarrow\infty$, $\quad x \sim\mathcal{N}(0, \mathbb{1})$
 
 
 
-<!-- .slide: style="text-align: left" template="[[anl-template]]" -->
+<!-- .slide: style="text-align: left; line-height: 1.5em" template="[[anl-template]]" -->
 
 # Hamiltonian Monte Carlo (HMC)
 
-- $p(x, v) = p(x) p(v) \propto e^{-H(x, v)}$, where
-
-- $p(x, v)$ is the joint distribution<sup id="fnref:1" role="doc-noteref">1</sup>, and
-
-    - $H(x, v)$ is the **Hamiltonian**
+- The joint distribution: $p(x, v) = p(x) p(v) \propto e^{-H(x, v)}$
  
 - We can evolve the $(\dot{x}, \dot{v})$ system to get new states $\\{x_{i}\\}$ !!
 
@@ -5769,8 +5765,6 @@ As $N\rightarrow\infty$, $\quad x \sim\mathcal{N}(0, \mathbb{1})$
 
 
 
-
-
 </div>
 
 </div>
@@ -5790,15 +5784,6 @@ As $N\rightarrow\infty$, $\quad x \sim\mathcal{N}(0, \mathbb{1})$
 </div>
 
 </div>
-<div class="footnotes" role="doc-endnotes">
-<ol>
-<li id="fn:1" role="doc-endnote" class="footnote"><p>
-
-Note that we simply discard the momentum at the end of the trajectory.
-
-</p></li></ol>
-</div>
-
 
 </div>
 
@@ -7186,9 +7171,21 @@ Note that we simply discard the momentum at the end of the trajectory.
 <div class="" style="top: 0!important; width: 100%" drag="100 100">
 
 
-<!-- .slide: template="[[anl-template]]" -->
-<section data-background-iframe="file:///Users/samforeman/projects/mcmc-demo/app.html" data-background-interactive style="border:none; width:100%; color:#1c1c1c!important; background-color:#1c1c1c;">
-</section>
+
+<!-- .slide: style="text-align: left" template="[[anl-template]]" -->
+
+# Issues with HMC
+
+- Energy levels selected randomly $\rightarrow$ <span id="red">slow mixing!</span>
+- Cannot easily traverse low-density zones
+- What do we want in a good sampler?
+  - <span id="blue">**Fast mixing**</span> (small autocorrelations)
+  - <span id="blue">**Fast burn-in**</span> (quick convergence)
+
+<img src="https://raw.githubusercontent.com/saforem2/l2hmc-dwq25/main/docs/assets/hmc_traj_eps025.svg" alt="" style="object-fit: scale-down" width="49%">
+
+<img src="https://raw.githubusercontent.com/saforem2/l2hmc-dwq25/main/docs/assets/hmc_traj_eps05.svg" alt="" style="object-fit: scale-down" width="49%">
+
 
 
 </div>
@@ -7891,6 +7888,2216 @@ Note that we simply discard the momentum at the end of the trajectory.
 <div class="" style="top: 0!important; width: 100%" drag="100 100">
 
 
+<!-- .slide: template="[[anl-template]]" -->
+
+# L2HMC: Leapfrog Layer
+<img src="https://raw.githubusercontent.com/saforem2/l2hmc-dwq25/main/docs/assets/drawio/update_steps.svg" style="width:31%;align:left;">
+<img src="https://raw.githubusercontent.com/saforem2/l2hmc-dwq25/main/docs/assets/drawio/leapfrog_layer_dark2.svg" style="width:64%;align:right;">
+<img src="https://raw.githubusercontent.com/saforem2/l2hmc-dwq25/main/docs/assets/drawio/network_functions.svg" style="width:90%;align:center;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: style="line-height: 1.75em" class="has-dark-background drop" data-background-color="#1c1c1c" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: template="[[anl-template]]" -->
+
+# Algorithm <!-- .element: style="margin-left: auto; margin-right: auto" -->
+
+1. Resample <span id="green">$\mathbf{v} \sim \mathcal{N}(0, \mathbb{1})\hspace{5pt}$</span>, <span id="pink">$d\sim\mathcal{U}(+, -)$,</span> 
+   construct <span id="cyan">$\xi$</span> $=(\mathbf{x}$, <span id="green">$\mathbf{v}$</span>, <span id="pink">$\pm$</span>$)$
+
+2. Generate <span style="color:#AE81FF;">proposal $\xi^{\ast}$</span> by passing <span style="color:#00CCFF;">initial
+   $\xi$</span> through $N_{\mathrm{LF}}$ **leapfrog
+   layers**:
+
+   <div id="note" style="width:55%; align:center; margin-left:auto; margin-right:auto;">
+
+   <span id="cyan">$\xi$</span> $ \hspace{1pt}\xrightarrow[]{\tiny{\mathrm{LF} \text{ layer}}}\xi_{1} \longrightarrow\cdots \longrightarrow \xi_{N_{\mathrm{LF}}} =$ <span style="color:#AE81FF;">$\xi^{\ast}$</span>
+
+   </div>
+
+
+3. Compute the **Metropolis-Hastings** (MH) acceptance (with Jacobian
+   $\mathcal{J}$) 
+
+   <div id="note" style="width:55%; align:center; margin-left:auto; margin-right:auto;">
+
+   $A({\textcolor{#AE81FF}{\xi^{\ast}}}|{\textcolor{#00CCFF}{\xi}})=
+   \mathrm{min}\left\\{1,
+   \frac{p(\textcolor{#AE81FF}{\xi^{\ast}})}{p(\textcolor{#00CCFF}{\xi})}\mathcal{J}\left(\textcolor{#AE81FF}{\xi^{\ast}},\textcolor{#00CCFF}{\xi}\right)\right\\}$
+
+   </div>
+
+4. <span id="red">`if training`</span>: Evaluate the **loss function** $\mathcal{L}\gets \mathcal{L}\_{\theta}(\textcolor{#AE81FF}{\xi^{\ast}}, \textcolor{#00CCFF}{\xi})$ and backprop
+
+5. Evaluate MH criteria and assign the next state in the chain according to
+
+   <div id="note" style="width:55%; align:center; margin-left:auto; margin-right:auto;">
+
+    $\mathbf{x}_{i+1}\gets
+   \begin{cases}
+     \textcolor{#AE81FF}{\mathbf{x}^{\ast}} \small{\text{ w/ prob }} A(\textcolor{#AE81FF}{\xi^{\ast}}|\textcolor{#00CCFF}{\xi}) \hspace{29pt}✅ \\\\
+     \textcolor{#00CCFF}{\mathbf{x}} \hspace{14px}\small{\text{ w/ prob }} 1 - A(\textcolor{#AE81FF}{\xi^{\ast}}|\textcolor{#00CCFF}{\xi}) \hspace{10pt}❌
+   \end{cases}$
+
+   </div>
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: style="line-height: 1.75em" class="has-dark-background drop" data-background-color="#1c1c1c" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: template="[[anl-template]]" -->
+
+# Toy Example: GMM $\in \mathbb{R}^{2}$ <!-- .element: style="margin-left: auto; margin-right: auto" -->
+
+<img src="https://raw.githubusercontent.com/saforem2/l2hmc-dwq25/main/docs/assets/iso_gmm_chains.svg" alt="" style="object-fit: scale-down">
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: style="line-height: 1.75em" class="has-dark-background drop" data-background-color="#1c1c1c" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+<!-- .slide: style="line-height: 1.75em" class="has-dark-background" data-background-color="#1c1c1c" -->
+
+<div class="" style="top: 0!important; width: 100%" drag="100 100">
+
+
+
+### Lattice Gauge Theory
+
+- Link variables:
+
+   \begin{equation}
+   U_{\mu}(x) = e^{i x_{\mu}(n)}, \text{ with } x_{\mu}(n)\in[-\pi,\pi]
+   \end{equation}
+
+- Wilson Action
+
+  </div>
+
+
+  
+  \begin{equation}
+  S_{\beta}(x)
+  = \beta\sum_{P} 1 - \cos \color{#00CCFF}{x_{P}}
+  \end{equation}  
+
+  </div>
+
+ <!-- .element: style="font-size: 0.65em; align: right" id="cyan" -->
+
+$x_{P}= x_{\mu}(n) + x_{\nu}(n+\hat{\mu})-x_{\mu}(n+\hat{\nu})-x_{\nu}(n)$
+
+- <h5><b><u> Topological Charge</U></b></h5>
+
+</div>
+
+<div class="column" style="width:30%;vertical-align:center;">
+
+<img src="assets/plaq.drawio.svg" alt="" style="object-fit: scale-down">
+
+
+</div>
+
+</div>
+
+<div style="align=center;">
+
+<span id="green">**Continuous:**</span> $\hspace{2pt}$ <span id="note" style="padding:8px;background:#D0F3D5;color:#1c1c1c;">✅ $Q_{\mathbb{R}} = \frac{1}{2\pi}\sum_{P} \sin x_{P}\in\mathbb{R}$ </span>
+
+$\hspace{10pt}$ <span id="red"> **Discrete:**</span>$\hspace{4pt}$ <span id="note" style="padding:8px;background:#F7C2CC;color:#1c1c1c;text-align:right;">❌ $Q_{\mathbb{Z}} = \frac{1}{2\pi}\sum_{P} \left\lfloor x_{P}\right\rfloor\hspace{18px}\in\mathbb{Z}$</span>
+
+  $\hspace{45pt}$ with $\left\lfloor x_{P}\right\rfloor = x_{P}-2\pi\left\lfloor\frac{x_{P}+\pi}{2\pi}\right\rfloor$</span>
+
+</div>
 
 <!-- .slide: class="has-dark-background" data-background-color="#1c1c1c" template="[[anl-template]]" -->
 # Callouts
@@ -9585,14 +11792,23 @@ This research used resources of the Argonne Leadership Computing Facility, which
   color:#bdbdbd;
   font-weight:400;
 }
-.note {
-  color:var(--callout-color);
-  border-radius:8px;
-  background-color:#35353540;
-  width: max-content;
-  border-color:#66666640;
-  padding: auto;
-  margin:auto;
+
+#note {
+	border-radius:8px;
+	margin-left: auto;
+	margin-right: auto;
+	width: max-content;
+	text-align:center;
+	padding: auto;
+	margin:auto;
+	border: 1px solid #303030;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color:#282828;
+	border-radius:8px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #blue {
@@ -10062,6 +12278,110 @@ pre code *::selection,
     top: 5px;
     left: 5px;
 }
+
+.reveal ol,
+
+.reveal dl,
+
+.reveal ul {
+
+display: inline-block;
+
+text-align: left;
+
+margin: 0 0 0 1em;
+
+}
+
+.reveal ol {
+
+list-style-type: decimal;
+
+}
+
+.reveal ul {
+
+list-style-type: disc;
+
+}
+
+.reveal ul ul {
+
+list-style-type: circle;
+
+}
+
+.reveal ul ul ul {
+
+list-style-type: circle;
+
+}
+
+.reveal ul ul,
+
+.reveal ul ol,
+
+.reveal ol ol,
+
+.reveal ol ul {
+
+display: block;
+
+margin-left: 40px;
+
+}
+
+.reveal dt {
+
+font-weight: bold;
+
+}
+
+.reveal dd {
+
+margin-left: 40px;
+
+}
+
+#pink {
+	color: #F92672;
+}
+
+#blue {
+    color: #228BE6;
+}
+#bright {
+    color: #00A2FF;
+}
+#cyan {
+    color: #00CCFF;
+}
+#purple {
+    color: #AE81ff;
+}
+#green {
+    /*color: #63FF51;*/
+	color: #65BB6A;
+}
+#yellow {
+    color: #FFFF00;
+}
+#lightpink {
+    color: #E64980;
+}
+#pink {
+	color:#F06292;
+}
+#pink {
+	color: #F92672;
+}
+#red {
+    color: #FA5252;
+}
+#grey {
+    color: #666666;
+}
+
 
 
 </style>
