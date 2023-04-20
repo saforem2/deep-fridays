@@ -2823,7 +2823,7 @@
 <div class="" style="position: absolute; left: 65%; top: 30%; height: 30%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
 
 
-<img src="https://raw.githubusercontent.com/saforem2/deep-fridays/main/assets/normal_distribution.svg" alt="" style="object-fit: scale-down">
+<img src="https://raw.githubusercontent.com/saforem2/deep-fridays/main/assets/normal_distribution.dark.svg" alt="" style="object-fit: scale-down">
 
 </div>
 
@@ -6469,18 +6469,26 @@ As $N\rightarrow\infty$, $\quad x \sim\mathcal{N}(0, \mathbb{1})$
 
 
 <!-- .slide: template="[[anl-template]]" -->
+
 # Leapfrog Integrator (HMC) <!-- .element: style="margin-left: auto; margin-right: auto" -->
 
 \begin{equation}
-  \dot{x} = \partial_{v} H
-  \quad \quad
-  \dot{v} = - \partial_{x} H
+\dot{x} = \partial_{v} H
+\quad \quad
+\dot{v} = - \partial_{x} H
 \end{equation}
 
-0. $v_{0} \sim {\mathcal{N}(0, \mathbb{1})}$
-1. $v' =  v_{0} - \frac{\varepsilon}{2} \partial_{x} S(x)$
-2. $x' = x_{0} + \varepsilon v'$
-3. $v'' = v' - \frac{\varepsilon}{2} \partial_{x} S(x)$
+We can numerically integrate the $(\dot{x}, \dot{v})$ system  
+(with step-size $\varepsilon$) for a single leapfrog step:
+
+<div id="note" style="display: inherit; padding-left: 1%; padding-right: 1%;">
+
+<span id="blue" style="text-align:left;"><b>Leapfrog Step:</b> $\hspace{15px}(x, \varepsilon) \rightarrow (x', v')$
+1. $v_{0} \sim {\mathcal{N}(0, \mathbb{1})}\hspace{10px}$ <span style="color:#666666;"> sample random momentum
+2. $v_{1} =  v_{0} - \frac{\varepsilon}{2} \partial_{x} S(x_{0})$
+3. $x' = x + \varepsilon v_{1}$
+4. $v' = v_{1} - \frac{\varepsilon}{2} \partial_{x} S(x')$
+</div>
 
 
 </div>
@@ -18258,7 +18266,8 @@ This research used resources of the Argonne Leadership Computing Facility, which
   font-family: var(--r-code-font);
   text-transform: none;
   tab-size: 4;
-  background-color:var(--cm-background-color);
+  /*background-color:var(--cm-background-color);*/
+  background-color: inherit;
   color: var(--cm-foreground-color);
   border-radius:2px;
   letter-spacing: -0.45px!important;
