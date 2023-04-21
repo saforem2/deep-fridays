@@ -2797,7 +2797,7 @@
 
 <section data-background-video-loop data-background-video-muted data-background-video="https://d2r55xnwy6nx47.cloudfront.net/uploads/2021/04/Muon_2560_Lede.mp4">
 
-<div class="" style="position: absolute; left: 0%; top: 45%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+<div class="" style="position: absolute; left: 0%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
 
 
 # Anomalous Magnetic Moment of the Muon<sup id="fnref:1" role="doc-noteref">1</sup>
@@ -7187,6 +7187,7 @@ As $N\rightarrow\infty$, $\quad x \sim\mathcal{N}(0, \mathbb{1})$
 
 $\dot{x} = \partial_{v} H, \quad \text{and}\quad \dot{v} = - \partial_{x} H$
 
+&nbsp;
 
 Numerically integrate the $(\dot{x}, \dot{v})$ system  
 (with fixed step-size $\varepsilon$) for a single **leapfrog** step:
@@ -16543,12 +16544,23 @@ Comparison of $\tau_{\mathrm{int}}^{Q}$ for <span style="color:#5BC461;">**train
 
 # Interpretation <!-- .element: style="margin-left: auto; margin-right: auto" -->
 
-<split even style="color: #666666">
+<div class="" style="position: absolute; left: 0%; top: 12%; height: 20%; width: 33%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
 
 Deviation in $x_{P}$ <!-- .element: style="text-align: left" -->
+</div>
+
+<div class="" style="position: absolute; left: 33%; top: 12%; height: 20%; width: 33%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
 Topological charge mixing <!-- .element: style="text-align: center" -->
+</div>
+
+<div class="" style="position: absolute; left: 66%; top: 12%; height: 20%; width: 33%; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly" align="right">
+
+
 Artificial influx of energy <!-- .element: style="text-align: right" -->
-</split>
+</div>
 
 <img src="https://raw.githubusercontent.com/saforem2/physicsSeminar/main/assets/ridgeplots.svg" alt="" style="object-fit: scale-down">
 
@@ -20142,7 +20154,7 @@ different $\beta$, with varying trajectory lengths $N_{\mathrm{LF}}$</small>
 <div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
 
 	  
-# Acknowledgements
+# Acknowledgements<sup id="fnref:1" role="doc-noteref">1</sup>
 
 ### Collaborators:
  - Xiao-Yong Jin
@@ -20174,16 +20186,6 @@ different $\beta$, with varying trajectory lengths $N_{\mathrm{LF}}$</small>
 
 </div>
 
-<small> 
-
-<br>
-
-This research used resources of the Argonne Leadership Computing Facility,
-which is a DOE Office of Science User Facility supported under Contract
-DE-AC02-06CH11357.
-
-</small>
-
 
 </div>
 
@@ -20204,6 +20206,11 @@ DE-AC02-06CH11357.
 </div>
 
 </div>
+<div class="footnotes" role="doc-endnotes">
+<ol>
+</ol>
+</div>
+
 
 </div>
 
@@ -25990,7 +25997,6 @@ display: block;
 .reveal dl,
 .reveal ul {
 	display: inline-block;
-
 	text-align: left;
 	margin: 0 0 0 1em;
 }
@@ -26004,11 +26010,11 @@ display: block;
 }
 
 .reveal ul ul {
-	list-style-type: square;
+	list-style-type: circle;
 }
 
 .reveal ul ul ul {
-	list-style-type: circle;
+	list-style-type: square;
 }
 
 .reveal ul ul,
