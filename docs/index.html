@@ -240,17 +240,17 @@ Here, $S(x)$ is the action (~ potential energy) of our physical system
 # Metropolis-Hastings Algorithm<sup id="fnref:MH" role="doc-noteref">1</sup>
 
 ```python
->>> import numpy as np
->>> NORM = np.sqrt(2 * np.pi ** 2)
+import numpy as np
+NORM = np.sqrt(2 * np.pi ** 2)
 
->>> def loglikelihood(x: float) -> float:
-	return np.exp(-0.5 * (x ** 2)) / NORM
+def loglikelihood(x: float) -> float:
+    return np.exp(-0.5 * (x ** 2)) / NORM
 
->>> def metropolis_hastings(nsteps: int = 1000) -> list[float]:
+def metropolis_hastings(nsteps: int = 1000) -> list[float]:
 	x = 0.  # initial state
 	samples = []
 	for n in range(nsteps):
-	    # generate RANDOM proposal
+		# generate RANDOM proposal
 		xp = x + np.random.randn()
 		llhratio = loglikelihood(xp) / loglikelihood(x)
 		# always accept if llhratio > 1
@@ -259,15 +259,12 @@ Here, $S(x)$ is the action (~ potential energy) of our physical system
 			x = xp
 		samples.append(x)
 	return samples
-
+	
 >>> %timeit metropolis_hastings(int(1e6))  # 2023 MBP M2 Max
 1.92 s ± 9.06 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
-
->>> %timeit metropolis_hastings(int(1e6))  # 2018 MBP i7
-3.85 s ± 173 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 ```
 
-<div class="" style="border: 1px solid #66BB6A; border-radius: 8px; box-shadow: RGBA(0, 0, 0, 0.35) 0px 5px 15px; background-color: #202020; position: absolute; left: 65%; top: 20%; height: 13%; width: 25%; display: flex; flex-direction: column; align-items: center; justify-content: center" id="note">
+<div class="" style="border: 1px solid #66BB6A; border-radius: 8px; box-shadow: RGBA(0, 0, 0, 0.35) 0px 5px 15px; background-color: #202020; position: absolute; left: 65%; top: 18%; height: 13%; width: 25%; display: flex; flex-direction: column; align-items: center; justify-content: center" id="note">
 
 
 $\begin{equation}
@@ -532,12 +529,6 @@ Here, $\varepsilon$ is a chosen fixed step-size
 
 # How to train?
 
-- We 
-
-
-
-  &nbsp;
-  
   **Discrete:** $\hspace{14pt}$ <span id="note" style="padding:4px; background:#F7C2CC; color:#1c1c1c; text-align:right; border-radius: 5pt; display:inline;">❌ $Q_{\mathbb{Z}} = \frac{1}{2\pi}\sum_{P} \left\lfloor x_{P}\right\rfloor\hspace{15px}\in\mathbb{Z}$</span> 
 
   &nbsp;
@@ -1681,7 +1672,7 @@ display: block;
 	margin-left:0px;
 	padding-left: 0px;
 	padding-right: 15px;
-	margin-top: 10%;
+	margin-top: 2em;
 }
 
 .footnotes > ol > li::marker {
